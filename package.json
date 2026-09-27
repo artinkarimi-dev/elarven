@@ -1,0 +1,46 @@
+{
+  "name": "elarven",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exceptional boutique stays, thoughtfully discovered. A frontend booking experience.",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@fontsource-variable/cormorant-garamond": "^5.2.8",
+    "@fontsource-variable/dm-sans": "^5.2.8",
+    "lucide-react": "^0.577.0",
+    "next": "16.3.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11",
+    "@playwright/test": "^1.58",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^16",
+    "@testing-library/user-event": "^14",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^5",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "jsdom": "^26",
+    "lighthouse": "^12.8.2",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^4",
+    "typescript": "^5.9.3",
+    "vitest": "^4"
+  }
+}
