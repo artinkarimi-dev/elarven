@@ -25,9 +25,9 @@ Signature interactions: landscape-led discovery, save feedback, immersive galler
 
 - Ink `#202c2b`, paper `#f8f7f3`, white `#ffffff`, muted `#58625d`, line `#d9ddd5`, accent `#a5432c`, pale `#e9eee7`.
 - Display: Cormorant Garamond variable; interface: DM Sans variable. Self-hosted OFL fonts through next/font/local.
-- Type: 12/14/16/18/24/32/48/64/88 px (fluid display). Body 16px, labels at least 14px.
+- Type: 12/14/16/18/24/32/48/64/88 px with a fluid desktop hero up to 112px. Body 16px; interface labels 12–14px and compact editorial eyebrows 9–12px. Mobile hero 46–55px.
 - Spacing: 4/8/12/16/24/32/48/64/96. Radius: 4px inputs, 8px media, 999px chips. Borders 1px; one soft panel shadow.
-- Motion: 180ms feedback, 350ms image preview, 650ms entrance; cubic-bezier(.2,.7,.2,1). No autoplay carousel, scroll hijacking or WebGL.
+- Motion: 180ms feedback, 350ms image preview, 220–300ms dialogs, 400ms collection entrance; cubic-bezier(.2,.7,.2,1). The hero headline paints immediately. No autoplay carousel, scroll hijacking or WebGL.
 - Breakpoints: 600/900/1200 px; max content 1320px. Mobile padding 20px; desktop 48px.
 
 ## Deliberate exclusions
