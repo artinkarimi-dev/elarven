@@ -11,3 +11,5 @@ playwright-report/
 .tools/
 audit-raw/
 *.log
+docs/screenshots/*.png
+recordings/
