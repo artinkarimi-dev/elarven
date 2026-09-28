@@ -1,16 +1,18 @@
 # Elarven
 
-Exceptional boutique stays, thoughtfully discovered. An editorial travel experience with a complete, tested frontend reservation journey.
+An editorial way to discover exceptional boutique stays, compare clear prices, and review a reservation locally.
 
-![Elarven desktop home](docs/screenshots/home-desktop.webp)
+## The experience
 
-<img src="docs/screenshots/home-mobile.webp" width="320" alt="Elarven mobile discovery with a portrait Alpine hero and stay search" />
+|                                                                     Desktop discovery                                                                      |                                                                              Mobile discovery                                                                              |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img src="docs/screenshots/home-desktop.webp" width="580" alt="Elarven desktop homepage showing a Dolomites cabin, editorial headline, and stay search" /> | <img src="docs/screenshots/home-mobile.webp" width="220" alt="Elarven mobile homepage showing the portrait Alpine cabin, destination, dates, guests, and search action" /> |
 
 ## The product
 
 Choosing a distinctive stay should feel inspiring without making dates, capacity or prices hard to understand. Elarven connects landscape-led discovery to practical decisions: destination → dates and guests → filtered results → property details → reservation review and local confirmation.
 
-This is frontend product engineering, not only a landing page. Twelve fictional accommodation options across four real regions have typed capacity, amenities, cancellation rules, blocked nights and derived EUR pricing. The interface supports:
+Twelve fictional accommodation options across four real regions have typed capacity, amenities, cancellation rules, blocked nights and derived EUR pricing. The interface supports:
 
 - Destination autocomplete, date validation and adult/child steppers.
 - Shareable URL search, combined filters, sorting, removable chips and empty-state recovery.
@@ -20,21 +22,7 @@ This is frontend product engineering, not only a landing page. Twelve fictional 
 - Validated contact details, review, local confirmation, and recovery after a confirmation-page reload.
 - Missing-property, application-error and image-fallback states.
 
-## Run locally
-
-Use Node.js 22.18 or newer in the Node 22 line and npm. No API key or account is needed.
-
-```sh
-npm ci
-npm run build
-npm run start
-```
-
-Open <http://127.0.0.1:3000>. For development, use `npm run dev`. Set `NEXT_PUBLIC_SITE_URL` to the eventual public origin before deploying; it defaults to localhost for metadata.
-
-The production launcher preserves the standalone build configuration, copies static/public assets into generated output, and starts its server on localhost. It does not modify source assets.
-
-## Implementation
+## Stack and architecture
 
 Next.js 16 App Router, React 19, strict TypeScript, Tailwind CSS 4, Lucide icons and Zod. DM Sans and Cormorant Garamond are self-hosted through `next/font/local`. Native dialogs and date inputs provide platform behavior; small CSS transitions avoid a heavy animation dependency. React state and a small provider are sufficient for this scope.
 
@@ -57,6 +45,20 @@ The map is deliberately illustrative, with no tile service or runtime key. Four 
 The design pairs architecture imagery, ivory surfaces, deep ink and terracotta actions with an expressive serif. Mobile uses a separate portrait hero crop and its own search and sticky-action layouts. Two polish passes addressed composition and then interaction consistency, focus, fees and rendering performance.
 
 Semantic landmarks, a skip link, visible focus, native modal isolation, explicit focus trapping/restoration, Escape dismissal, labelled errors, live save feedback and reduced-motion styles support the critical journey. Native date controls preserve keyboard/device calendar support. Automated axe scans cover five routes; keyboard browser checks cover dialogs, gallery and form errors. These checks are not an accessibility certification or a substitute for assistive-technology user testing.
+
+## Run locally
+
+Use Node.js 22.18 or newer in the Node 22 line and npm. No API key or account is needed.
+
+```sh
+npm ci
+npm run build
+npm run start
+```
+
+Open <http://127.0.0.1:3000>. For development, use `npm run dev`. Set `NEXT_PUBLIC_SITE_URL` to the eventual public origin before deploying; it defaults to localhost for metadata.
+
+The production launcher preserves the standalone build configuration, copies static/public assets into generated output, and starts its server on localhost. It does not modify source assets.
 
 ## Verification
 
@@ -84,7 +86,7 @@ Verified locally: clean dependency installation, lint, TypeScript, **30 unit/com
 
 Final Lighthouse 12.8.2 homepage audit on local production: **88 mobile / 100 desktop Performance**, and **100 Accessibility, Best Practices and SEO** on both. Mobile LCP is 3.02s, TBT 289.50ms, CLS 0; desktop LCP is 0.73s, TBT 12ms, CLS 0. Fresh headless Chromium profiles use standard simulated mobile throttling and Lighthouse's official desktop settings, with a warm local server. Mobile misses the 90 target by two points; remaining rendering/main-thread costs are documented in the quality report. These are lab results, not field performance claims.
 
-CI installs dependencies, checks formatting/lint/types, runs unit tests, builds, installs Chromium and runs E2E tests. The workflow is configured but has not run on GitHub: publication is deferred at the owner's request.
+The configured CI workflow installs dependencies, checks formatting/lint/types, runs unit tests, builds, installs Chromium and runs E2E tests. The results above are from local runs.
 
 ## Decisions and provenance
 
