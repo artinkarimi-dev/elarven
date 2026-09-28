@@ -1,20 +1,18 @@
 import Link from 'next/link';
+import { connection } from 'next/server';
+import { defaultTrip } from '@/lib/domain';
 import { ArrowDown, ArrowUpRight, Compass, Leaf, Sun } from 'lucide-react';
 import { SearchBar } from '@/components/controls';
 import { Discovery } from '@/components/discovery';
 import { StayImage } from '@/components/stay-image';
-export default function Home() {
+import { HeroImage } from '@/components/hero-image';
+export default async function Home() {
+  await connection();
+  const trip = defaultTrip();
   return (
     <main id="main">
       <section className="hero">
-        <StayImage
-          src="/images/alpine.webp"
-          alt="An illuminated timber cabin framed by pines and the peaks of the Dolomites"
-          fill
-          preload
-          sizes="100vw"
-          className="hero-image"
-        />
+        <HeroImage />
         <div className="hero-shade" />
         <div className="hero-content">
           <p className="eyebrow">
@@ -41,7 +39,7 @@ export default function Home() {
           <ArrowUpRight size={20} />
         </Link>
         <div className="hero-search">
-          <SearchBar />
+          <SearchBar initial={trip} />
         </div>
         <div className="hero-bottom">
           <a href="#discover">

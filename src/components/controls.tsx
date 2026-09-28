@@ -10,7 +10,7 @@ import {
   type Filters,
   type Trip,
 } from '@/lib/domain';
-import { destinations } from '@/lib/stays';
+import { DestinationInput } from './destination-input';
 import { useStays } from './providers';
 import { trapDialogFocus } from '@/lib/dialog';
 
@@ -31,7 +31,6 @@ export function Modal({
       <button
         type="button"
         className={`modal-trigger ${className}`}
-        aria-label={title}
         aria-haspopup="dialog"
         onClick={() => ref.current?.showModal()}
       >
@@ -175,6 +174,7 @@ export function SearchBar({
   return (
     <form
       className={`search-bar ${className}`}
+      noValidate
       onSubmit={(e) => {
         e.preventDefault();
         const issue = validateDates(trip.checkin, trip.checkout);
@@ -185,24 +185,10 @@ export function SearchBar({
         router.push('/stays?' + serialize({ ...initial, ...trip, destination }));
       }}
     >
-      <label className="destination-field">
+      <div className="destination-field">
         <MapPin size={19} />
-        <span>
-          <strong>Where to?</strong>
-          <input
-            aria-label="Destination"
-            list="destinations"
-            placeholder="Somewhere extraordinary"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-          />
-        </span>
-        <datalist id="destinations">
-          {destinations.map((d) => (
-            <option key={d} value={d} />
-          ))}
-        </datalist>
-      </label>
+        <DestinationInput value={destination} onChange={setDestination} />
+      </div>
       <div className="search-date">
         <CalendarDays size={19} />
         <Modal
@@ -271,7 +257,7 @@ export function SaveButton({
       onClick={() => toggle(id)}
     >
       <Heart size={19} fill={active ? 'currentColor' : 'none'} />
-      {full && <span>{active ? 'Saved' : 'Save stay'}</span>}
+      {full && <span>{active ? 'Unsave' : 'Save'}</span>}
     </button>
   );
 }

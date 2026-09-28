@@ -155,7 +155,12 @@ export function Results({ all, filters }: { all: Stay[]; filters: Filters }) {
           </button>
         </div>
       )}
-      <dialog className="dialog filters-dialog" ref={dialog} aria-labelledby="filters-title" onKeyDown={trapDialogFocus}>
+      <dialog
+        className="dialog filters-dialog"
+        ref={dialog}
+        aria-labelledby="filters-title"
+        onKeyDown={trapDialogFocus}
+      >
         <form
           onSubmit={(e) => {
             e.preventDefault();

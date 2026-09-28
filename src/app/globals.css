@@ -197,7 +197,6 @@ img {
   top: 25%;
   left: 6%;
   right: 6%;
-  animation: rise 0.8s var(--ease);
 }
 .eyebrow {
   font-size: 12px;
@@ -2307,5 +2306,111 @@ input[type='range'] {
   }
   .hero-description {
     margin-top: 22px;
+  }
+}
+/* Keep the opening action above common portrait video overlays. */
+@media (max-width: 600px) {
+  .hero-search {
+    bottom: 150px;
+  }
+  .hero-bottom {
+    bottom: 110px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dialog[open] {
+    animation: rise 220ms var(--ease);
+  }
+  .gallery-dialog[open] .gallery-stage {
+    animation: rise 300ms var(--ease);
+  }
+  .is-saved svg {
+    animation: save-pop 260ms var(--ease);
+  }
+}
+@keyframes save-pop {
+  50% {
+    transform: scale(1.18);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.destination-picker {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+.destination-picker label {
+  display: block;
+  cursor: text;
+}
+.destination-options {
+  position: absolute;
+  list-style: none;
+  top: calc(100% + 28px);
+  left: -40px;
+  min-width: 300px;
+  width: calc(100% + 64px);
+  padding: 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  box-shadow: 0 14px 35px #10211f24;
+  z-index: 12;
+}
+.destination-options[hidden] {
+  display: none;
+}
+.destination-hint {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding: 9px 12px;
+}
+.destination-options [role='option'] {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 12px;
+  min-height: 58px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.destination-options [role='option']:hover,
+.destination-options [aria-selected='true'] {
+  background: var(--pale);
+}
+.destination-options [role='option'] > span {
+  flex: 1;
+}
+.destination-options b {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+.destination-options small {
+  font-size: 11px;
+  color: var(--muted);
+}
+.search-bar:focus-within {
+  z-index: 10;
+}
+@media (max-width: 600px) {
+  .destination-options {
+    left: -35px;
+    width: calc(100% + 35px);
+    min-width: 0;
+    top: calc(100% + 18px);
+  }
+}
+@media (max-width: 900px) {
+  .reservation-summary .price-breakdown dl > div:not(.total) {
+    display: flex;
+  }
+}
+@media (max-width: 600px) {
+  .hero-image {
+    object-position: 50% 50%;
   }
 }

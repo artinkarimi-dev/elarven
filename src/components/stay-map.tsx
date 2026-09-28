@@ -39,14 +39,16 @@ export default function StayMap({ stays, trip }: { stays: Stay[]; trip: Trip }) 
             </text>
           </g>
         </svg>
-        {stays.map((s, i) => {
+        {stays.map((s) => {
+          const unit = Number(s.id.split('-').at(-1));
           const left = 16 + ((s.coordinates[1] + 9) / 31) * 60;
-          const top = 70 - ((s.coordinates[0] - 30) / 38) * 70;
+          // Reserve the bottom strip for the map caption, including at 360px.
+          const top = 60 - ((s.coordinates[0] - 30) / 38) * 50;
           return (
             <button
               key={s.id}
               className={`map-pin ${current.id === s.id ? 'selected' : ''}`}
-              style={{ left: `${left + (i % 3) * 2}%`, top: `${top + (i % 3) * 14}%` }}
+              style={{ left: `${left + unit * 2}%`, top: `${top + unit * 12}%` }}
               onClick={() => setSelected(s.id)}
               aria-label={`${s.name}, ${s.region}, ${money(s.rate)} per night`}
               aria-pressed={current.id === s.id}

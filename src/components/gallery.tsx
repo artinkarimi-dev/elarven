@@ -41,7 +41,7 @@ export function Gallery({ stay }: { stay: Stay }) {
             sizes="(max-width: 600px) 40vw, 30vw"
           />
           <span>
-            <Expand size={16} /> View gallery
+            <Expand size={16} /> Open gallery
           </span>
         </button>
       </div>

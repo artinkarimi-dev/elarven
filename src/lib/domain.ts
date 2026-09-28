@@ -16,7 +16,7 @@ export const money = (n: number) =>
     style: 'currency',
     currency: 'EUR',
     maximumFractionDigits: 2,
-    minimumFractionDigits: 0,
+    minimumFractionDigits: Number.isInteger(n) ? 0 : 2,
   }).format(n);
 export const today = () => new Date().toISOString().slice(0, 10);
 export function addDays(date: string, n: number) {
