@@ -1,0 +1,80 @@
+[
+  {
+    "mode": "mobile",
+    "date": "2026-10-06T05:26:59.139Z",
+    "lighthouseVersion": "12.8.2",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+    "settings": {
+      "formFactor": "mobile",
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      }
+    },
+    "scores": {
+      "performance": 0,
+      "accessibility": 0,
+      "best-practices": 0,
+      "seo": 0
+    },
+    "metrics": {
+      "first-contentful-paint": {},
+      "largest-contentful-paint": {},
+      "total-blocking-time": {},
+      "cumulative-layout-shift": {},
+      "speed-index": {}
+    },
+    "issues": []
+  },
+  {
+    "mode": "desktop",
+    "date": "2026-10-06T05:27:25.078Z",
+    "lighthouseVersion": "12.8.2",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+    "settings": {
+      "formFactor": "desktop",
+      "throttlingMethod": "simulate",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "screenEmulation": {
+        "mobile": false,
+        "width": 1350,
+        "height": 940,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      }
+    },
+    "scores": {
+      "performance": 0,
+      "accessibility": 0,
+      "best-practices": 0,
+      "seo": 0
+    },
+    "metrics": {
+      "first-contentful-paint": {},
+      "largest-contentful-paint": {},
+      "total-blocking-time": {},
+      "cumulative-layout-shift": {},
+      "speed-index": {}
+    },
+    "issues": []
+  }
+]
